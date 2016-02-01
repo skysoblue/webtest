@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
+    <title>Title</title>
+</head>
+<body>
+<input type="button" onclick="home()" value="홈으로">
+<script>
+function home(){
+  location.href='/';
+};
+$(function(){
+    alert('알러트!!!');
+    battle(new Gun());
+    battle(new Cannon());
+    battle('새총');
+
+});
+   var Gun = function () {
+    this.fire = function () {
+        return '총쏘기';
+    }
+   };
+   var Cannon = function () {
+       this.fire = function () {
+           return '대포쏘기';
+       }
+   };
+       function battle(weapon){
+           if(weapon.constructor == Gun){
+               alert(weapon.fire());
+           }else if(weapon.constructor == Cannon){
+               alert(weapon.fire());
+           }else{
+               alert('발사할수가 없습니다');
+           }
+       }
+
+</script>
+</body>
+</html>
